@@ -1,0 +1,15 @@
+<launch>
+    <!-- Define camera topic -->
+    <param name="camera_topic" value="/camera/image_raw"/>
+    
+    <!-- Define recognition result topic -->
+    <param name="recognition_result_topic" value="/face_recognition_results"/>
+    
+    <!-- Launch camera node -->
+    <node name="detect_face_node" pkg="face_recognition" type="camera_node.py"/>
+    
+    <!-- Launch detect and recognize nodes -->
+    <!-- <node name="detect_face_node" pkg="face_recognition" type="face_recognition.py"/> -->
+    <node name="recognize_face_node" pkg="face_recognition" type="recognize_faces.py"/>
+</launch>
+
